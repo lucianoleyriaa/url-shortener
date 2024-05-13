@@ -12,7 +12,6 @@ export default async function LinkPage({ params }: Props) {
     return redirect(response.data?.url);
   }
 
-
-  // return redirect('http://localhost:3000/shorten-link')
+  return redirect(`${ process.env.HOST }/shorten-link`)
 
 }

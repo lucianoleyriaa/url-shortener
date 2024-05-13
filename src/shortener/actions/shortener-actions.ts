@@ -4,25 +4,23 @@ import { errorHandler } from "@/lib/errors/errorHandler";
 import { NotFoundException } from "@/lib/errors/exceptions";
 import prisma from "@/lib/prisma";
 
-
-export const createShorUrl = async (url: string) => {
-
-  const getShortString = Math.random().toString(36).substring(2, 8);
-
-  // Validar que la url sea un url valida
+export const createShorUrl = async (url: string, customShortUrl: string, title: string) => {
+  const baseUrl = process.env.HOST;
+  let shortUrl = `${ baseUrl }/${ customShortUrl.length ? customShortUrl : Math.random().toString(36).substring(2, 8) }`;
 
   try {
     await prisma.shorten_urls.create({
       data: {
         url: url,
-        short_url: `${ process.env.HOST }/${ getShortString }`,
+        short_url: shortUrl,
+        title: title,
         clicks: 0,
       }
     })
 
     return {
       url,
-      shortUrl: `${ process.env.HOST }/${ getShortString }`,
+      shortUrl: shortUrl,
     }
   } catch (error) {
     // TODO: Manejar error

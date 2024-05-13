@@ -17,6 +17,8 @@ model shorten_urls {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   url       String
   short_url String
+  title     String
+  permanent Boolean  @default(false)
   clicks    Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
