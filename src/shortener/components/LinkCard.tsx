@@ -37,10 +37,11 @@ export const LinkCard = () => {
   }
 
   return (
-    <div className="w-1/2 p-10 shadow-md ring-1 ring-inset ring-gray-300 rounded-xl dark:bg-gray-800/70 dark:ring-gray-500">
-      <h3 className='dark:text-gray-300 text-center text-2xl'>Create short link</h3>
+    <div className="w-2/2 xl:w-2/5 py-12 md:p-10 md:my-10">
+      <h3 className='mb-6 dark:text-gray-300 text-left text-3xl'>Create short link</h3>
+ 
       <div className="flex items-start gap-3 flex-col justify-start mt-8">
-        <label htmlFor='link' className='dark:text-gray-300 text-sm font-light'>Enter destination link</label>
+        <label htmlFor='link' className='dark:text-gray-300 text-md font-light'>Enter destination link</label>
         <div className='w-full'>
           <Input 
             onChange={ (e) => onFormChange(e) }
@@ -52,7 +53,7 @@ export const LinkCard = () => {
       </div>
 
       <div className='flex items-start gap-3 flex-col justify-start mt-8'>
-        <label htmlFor='shortLink' className='dark:text-gray-300 text-sm font-light'>Enter short link (optional)</label>
+        <label htmlFor='shortLink' className='dark:text-gray-300 text-md font-light'>Enter short link (optional)</label>
         <div className='w-full'>
           <Input 
             onChange={ (e) => onFormChange(e) }
@@ -63,7 +64,7 @@ export const LinkCard = () => {
       </div>
 
       <div className='flex items-start gap-3 flex-col justify-start mt-8'>
-        <label htmlFor='shortLink' className='dark:text-gray-300 text-sm font-light'>Enter a title</label>
+        <label htmlFor='shortLink' className='dark:text-gray-300 text-md font-light'>Enter a title</label>
         <div className='w-full'>
           <Input 
             onChange={ (e) => onFormChange(e) }
@@ -73,8 +74,15 @@ export const LinkCard = () => {
         </div>
       </div>
 
-      <div className='flex justify-end mt-8'>
-        <button onClick={ onShort } type="button" className="py-2 px-4 flex items-center rounded-md bg-green-400 text-white dark:bg-gray-800 dark:text-gray-300 dark:ring-1 dark:ring-inset dark:ring-gray-500">
+      <div className='mt-2'>
+        <small className='text-xs text-gray-800 dark:text-gray-400'>
+          Ten en cuenta que los los siguientes links son generados a modo de prueba, y por lo tanto seran validos solo 
+          por 7 dias. Si quieres mantenerlos por mas tiempo por favor crea un cuenta o inicia sesion si ya tienes una.
+        </small>
+      </div>
+
+      <div className='flex md:justify-end mt-8 md:mt-4'>
+        <button onClick={ onShort } type="button" className="py-2 px-4 text-center flex-grow md:flex-grow-0 flex items-center justify-center rounded-md bg-gray-800 text-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:ring-1 dark:ring-inset dark:ring-gray-500">
           <span className='mr-2'>Create</span>
           {
             loading && (

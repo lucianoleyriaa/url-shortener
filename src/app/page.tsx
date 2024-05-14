@@ -10,16 +10,24 @@ export default function Home() {
           experiencia de tus usuarios y mejora tu estrategia de marketing digital con nuestra potente herramienta de generación 
           de enlaces y códigos QR!
         </p>
-        <div className="flex gap-6 items-center justify-center">
+        <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
           <LinkButton 
             buttonText="Get Started"
             link="/shorten-link"
-            styles="bg-gray-800 text-gray-100 dark:bg-gray-100 dark:text-gray-800 dark:ring-0"
+            styles="bg-gray-800 text-gray-100 w-full text-center sm:w-auto dark:bg-gray-100 dark:text-gray-800 dark:ring-0"
+            icon={ <i className="fa-solid fa-arrow-right"></i> }
           />
           <LinkButton 
-            buttonText="Try it out"
+            buttonText="Create link"
             link="/shorten-link"
-            styles="dark:bg-gray-800 dark:text-gray-100 bg-white text-gray-800 ring-1 ring-inset ring-gray-500 dark:ring-gray-500"
+            styles="dark:bg-gray-800 dark:text-gray-100 bg-white text-gray-800 w-full text-center sm:w-auto ring-1 ring-inset ring-gray-500 dark:ring-gray-500"
+            icon={ <i className="fa-solid fa-link"></i> }
+          />
+          <LinkButton 
+            buttonText="Generate QR"
+            link="/qr-generator"
+            styles="dark:bg-gray-800 dark:text-gray-100 bg-white text-gray-800 w-full text-center sm:w-auto ring-1 ring-inset ring-gray-500 dark:ring-gray-500"
+            icon={ <i className="fa-solid fa-qrcode"></i> }
           />
         </div>
       </div>
