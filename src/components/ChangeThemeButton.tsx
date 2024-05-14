@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Button } from './Button'
+import { IconButton } from './IconButton';
 
 export const ChangeThemeButton = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -13,8 +13,7 @@ export const ChangeThemeButton = () => {
   }
 
   return (
-    <Button
-      buttonText=''
+    <IconButton 
       onClick={ onChangeTheme }
       icon={ <i className="fa-regular fa-sun cursor-pointer"></i> }
     />

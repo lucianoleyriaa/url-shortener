@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></link>
       </head>
-      <body className={`${inter.className} dark:bg-gray-950`}>{children}</body>
+      <body className={`${inter.className} dark:bg-gray-950`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
