@@ -15,11 +15,19 @@ export default function Home() {
             buttonText="Get Started"
             link="/shorten-link"
             styles="bg-gray-800 text-gray-100 dark:bg-gray-100 dark:text-gray-800 dark:ring-0"
+            icon={ <i className="fa-solid fa-arrow-right"></i> }
           />
           <LinkButton 
-            buttonText="Try it out"
+            buttonText="Create link"
             link="/shorten-link"
             styles="dark:bg-gray-800 dark:text-gray-100 bg-white text-gray-800 ring-1 ring-inset ring-gray-500 dark:ring-gray-500"
+            icon={ <i className="fa-solid fa-link"></i> }
+          />
+          <LinkButton 
+            buttonText="Generate QR"
+            link="/shorten-link"
+            styles="dark:bg-gray-800 dark:text-gray-100 bg-white text-gray-800 ring-1 ring-inset ring-gray-500 dark:ring-gray-500"
+            icon={ <i className="fa-solid fa-qrcode"></i> }
           />
         </div>
       </div>
